@@ -1,69 +1,74 @@
-# Welcome to your Lovable project
+# Orangery Ventures
 
-## Project info
+A modern, fully responsive landing site for **Orangery Ventures** — a venture
+studio / investment fund backing early-stage startup founders. The site
+presents the fund's thesis, investment approach, the gap it fills for
+founders, its community and media presence, and ways to connect.
 
-**URL**: https://lovable.dev/projects/f34e3a91-e821-4705-9e65-257dcf59254e
+## Features
 
-## How can I edit this code?
+- Hero section with animated intro and clear call-to-action
+- "We got started 2025" about section with the fund's mission
+- Thesis / Manifesto section explaining the investment philosophy
+- "The Gap" — the problem the fund solves for founders in search
+- Investment Approach breakdown
+- Founders-in-search program spotlight
+- Community and media section
+- Connect / contact section + full footer
+- Custom animations, serif display typography, dark elegant theme
+- Client-side routing with 404 catch-all page
 
-There are several ways of editing your application.
+## Tech Stack
 
-**Use Lovable**
+- **React 18** + **TypeScript**
+- **Vite 5** (build tooling)
+- **Tailwind CSS 3** + shadcn/ui component primitives (Radix UI)
+- **React Router** (routing), **TanStack React Query**
+- Recharts, React Hook Form + Zod, Framer-style custom animations
+- Originally scaffolded with Lovable
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/f34e3a91-e821-4705-9e65-257dcf59254e) and start prompting.
+## Quick Start
 
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```bash
+npm install
+npm run dev        # local dev server on http://localhost:8080
 ```
 
-**Edit a file directly in GitHub**
+## Build
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```bash
+npm run build      # outputs static files to dist/
+npm run preview    # preview the production build locally
+```
 
-**Use GitHub Codespaces**
+## Project Structure
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+```
+.
+├── index.html            # entry HTML (title: Orangery Ventures)
+├── public/               # favicon, og-image, lovable-uploads
+├── src/
+│   ├── main.tsx          # app entry
+│   ├── App.tsx           # providers + router
+│   ├── pages/            # Index, NotFound
+│   ├── components/       # Hero, About, Manifesto, Gap, InvestmentApproach,
+│   │                     #   FoundersInSearch, Community, Connecting, Header, Footer
+│   ├── components/ui/    # shadcn/ui primitives
+│   ├── hooks/            # custom hooks
+│   └── lib/              # utils
+└── vite.config.ts
+```
 
-## What technologies are used for this project?
+## Deploy Notes
 
-This project is built with .
+Static Vite build (`dist/`) — deploys to any static host. This repo is
+deployed via **GitHub Pages** (`gh-pages` branch, `dist/` contents, base path
+`/Orangery-Ventures/`).
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## License
 
-## How can I deploy this project?
+Free for personal and commercial use.
 
-Simply open [Lovable](https://lovable.dev/projects/f34e3a91-e821-4705-9e65-257dcf59254e) and click on Share -> Publish.
+---
 
-## I want to use a custom domain - is that possible?
-
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+Built by Girish Lade — https://ladestack.in
